@@ -43,3 +43,15 @@ Intrinsic parameters are specific to a camera. They include information like foc
 #### Camera Extrinsic Parameters
 
 Extrinsic parameters correspond to rotation and translation vectors, <img src="https://render.githubusercontent.com/render/math?math=r_%7Bvecs%7D"> and <img src="https://render.githubusercontent.com/render/math?math=t_%7Bvecs%7D"> respectively, which transform coordinates of a 3D point to a coordinate system.
+
+#### Implementation
+
+To find these parameters, we must provide some sample images of a well defined pattern (e.g. a chess board). We find some specific points of which we already know the relative positions (e.g. square corners in the chess board). We know the coordinates of these points in real world space and we know the coordinates in the image, so we can solve for the distortion coefficients. For better results, we need at least 10 test patterns.
+
+The important input data needed for calibration of the camera is the set of 3D real world points, i.e. object points or `objpoints` and the corresponding 2D coordinates of these points in the image, i.e. image points or `imgpoints`. 
+
+2D image points can be easily found from the image; these image points are locations where two black squares touch each other in chess boards.
+
+However, it is not straightforward to compute the 3D real world points since the images are taken from a static camera and chess boards are placed at different locations and orientations. So we need to know (X,Y,Z) values. But for simplicity, we can say chess board was kept stationary at XY plane, (so Z=0 always) and camera was moved accordingly. This consideration helps us to find only X,Y values. Now for X,Y values, we can simply pass the points as (0,0), (1,0), (2,0), ... which denotes the location of points. In this case, the results we get will be in the scale of size of chess board square. But if we know the square size, (say 30 mm), we can pass the values as (0,0), (30,0), (60,0), ... Thus, we get the results in mm.
+
+Once we get the `objpoints` and `imgpoints`, we can use them to calibrate the camera.
