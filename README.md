@@ -1,2 +1,2 @@
 # Camera Calibration
-Camera Calibration using OpenCV
+<b>Authors:</b> Tanmay Samak and Chinmay Samak
