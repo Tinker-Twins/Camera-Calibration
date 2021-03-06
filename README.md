@@ -65,7 +65,7 @@ Intrinsic parameters are specific to a camera. They include information like foc
 Extrinsic parameters correspond to rotation and translation vectors, <img src="https://render.githubusercontent.com/render/math?math=r_%7Bvecs%7D"> and <img src="https://render.githubusercontent.com/render/math?math=t_%7Bvecs%7D"> respectively, which transform coordinates of a 3D point to a coordinate system.
 </p>
 
-#### Implementation
+### Implementation:
 
 <p align="justify">
 To find these parameters, we must provide some sample images of a well defined pattern (e.g. a chess board). We find some specific points of which we already know the relative positions (e.g. square corners in the chess board). We know the coordinates of these points in real world space and we know the coordinates in the image, so we can solve for the distortion coefficients. For better results, we need at least 10 test patterns.
@@ -78,3 +78,7 @@ However, it is not straightforward to compute the 3D real world points since the
 
 Once we get the `objpoints` and `imgpoints`, we can use them to calibrate the camera.
 </p>
+
+### References:
+
+[1] OpenCV, \"Camera Calibration,\" [Online]. Available: https://docs.opencv.org/master/dc/dbb/tutorial_py_calibration.html
