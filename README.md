@@ -33,3 +33,9 @@ Similarly, tangential distortion occurs because the image-taking lense is not al
 In short, we need to find five parameters, known as distortion coefficients given by:
 
 <img src="https://render.githubusercontent.com/render/math?math=dist%20%3D%20(k_1%20%5Chspace%7B10pt%7D%20k_2%20%5Chspace%7B10pt%7D%20p_1%20%5Chspace%7B10pt%7D%20p_2%20%5Chspace%7B10pt%7D%20k_3)">
+
+#### Camera Intrinsic Parameters
+
+Intrinsic parameters are specific to a camera. They include information like focal length <img src="https://render.githubusercontent.com/render/math?math=(f_x%2Cf_y)"> and optical centers <img src="https://render.githubusercontent.com/render/math?math=(c_x%2Cc_y)">. The focal length and optical centers can be used to create a camera matrix, which can be used to remove distortion due to the lenses of a specific camera. The camera matrix is unique to a specific camera, so once calculated, it can be reused on other images taken by the same camera. It is expressed as a <img src="https://render.githubusercontent.com/render/math?math=3%20%5Ctimes%203"> matrix:
+
+<img src="https://render.githubusercontent.com/render/math?math=mtx%20%3D%20%5Cleft%20%5B%20%5Cbegin%7Bmatrix%7D%20f_x%20%26%200%20%26%20c_x%20%5C%5C%200%20%26%20f_y%20%26%20c_y%20%5C%5C%200%20%26%200%20%26%201%20%5Cend%7Bmatrix%7D%20%5Cright%20%5D">
