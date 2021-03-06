@@ -3,3 +3,13 @@
 
 ### Objectives:
 * Calibrate the camera to get its intrinsic parameters.
+
+### Theory:
+Camera calibration computes the following parameters:
+* Distortion coefficients
+* Camera Intrinsic Parameters
+    * Focal length
+    * Optical centers
+* Camera Extrinsic Parameters
+    * Rotation vector
+    * Translation vector
