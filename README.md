@@ -13,3 +13,5 @@ Camera calibration computes the following parameters:
 * Camera Extrinsic Parameters
     * Rotation vector
     * Translation vector
+
+Following is a brief description of the process [1].
