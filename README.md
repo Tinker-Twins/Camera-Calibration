@@ -2,7 +2,7 @@
 <b>Authors:</b> Tanmay Samak and Chinmay Samak
 
 ### Objectives:
-* Calibrate the camera to get its intrinsic parameters.
+* Calibrate a camera to get its distortion coefficients, intrinsic parameters and extrinsic parameters.
 
 ### Theory:
 Camera calibration computes the following parameters:
