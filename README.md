@@ -1,2 +1,2 @@
-# Camera-Calibration
+# Camera Calibration
 Camera Calibration using OpenCV
