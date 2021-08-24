@@ -1,5 +1,4 @@
 # Camera Calibration
-<b>Authors:</b> Tanmay Samak and Chinmay Samak
 
 ### Objectives:
 * Calibrate a camera to get its distortion coefficients, intrinsic parameters and extrinsic parameters.
