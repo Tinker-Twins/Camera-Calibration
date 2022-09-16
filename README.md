@@ -51,7 +51,7 @@ In short, we need to find five parameters, known as distortion coefficients give
 #### Camera Intrinsic Parameters
 
 <p align="justify">
-Intrinsic parameters are specific to a camera. They include information like focal length <img src="https://render.githubusercontent.com/render/math?math=(f_x%2Cf_y)"> and optical centers <img src="https://render.githubusercontent.com/render/math?math=(c_x%2Cc_y)">. The focal length and optical centers can be used to create a camera matrix, which can be used to remove distortion due to the lenses of a specific camera. The camera matrix is unique to a specific camera, so once calculated, it can be reused on other images taken by the same camera. It is expressed as a <img src="https://render.githubusercontent.com/render/math?math=3%20%5Ctimes%203"> matrix:
+Intrinsic parameters are specific to a camera. They include information like focal length <img src="https://render.githubusercontent.com/render/math?math=(f_x%2Cf_y)"> and optical center <img src="https://render.githubusercontent.com/render/math?math=(c_x%2Cc_y)">. The focal length and optical center can be used to create a camera matrix, which can be used to remove distortion due to the lenses of a specific camera. The camera matrix is unique to a specific camera, so once calculated, it can be reused on other images taken by the same camera. It is expressed as a <img src="https://render.githubusercontent.com/render/math?math=3%20%5Ctimes%203"> matrix:
 </p>
 
 <p align="center">
