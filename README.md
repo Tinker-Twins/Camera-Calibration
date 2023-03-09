@@ -61,7 +61,7 @@ Intrinsic parameters are specific to a camera. They include information like foc
 #### Camera Extrinsic Parameters
 
 <p align="justify">
-Extrinsic parameters correspond to rotation and translation vectors, <img src="https://render.githubusercontent.com/render/math?math=r_%7Bvecs%7D"> and <img src="https://render.githubusercontent.com/render/math?math=t_%7Bvecs%7D"> respectively, which transform coordinates of a 3D point to a coordinate system.
+Extrinsic parameters correspond to rotation and translation vectors, <img src="https://render.githubusercontent.com/render/math?math=r_%7Bvecs%7D"> and <img src="https://render.githubusercontent.com/render/math?math=t_%7Bvecs%7D"> respectively, which transform 3D coordinates of a point in world frame to camera coordinate system.
 </p>
 
 ### Implementation:
