@@ -5,7 +5,7 @@
 
 ### Theory:
 Camera calibration computes the following parameters:
-* Distortion coefficients
+* Distortion Coefficients
 * Camera Intrinsic Parameters
     * Focal length
     * Optical centers
