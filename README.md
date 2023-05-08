@@ -78,6 +78,8 @@ However, it is not straightforward to compute the 3D real world points since the
 Once we get the `objpoints` and `imgpoints`, we can use them to calibrate the camera.
 </p>
 
+![](https://github.com/Tinker-Twins/Camera-Calibration/blob/main/Camera%20Calibration.png)
+
 **Note:** To calibrate your own camera, you will need to print a suitable [calibration grid](https://github.com/Tinker-Twins/Camera-Calibration/tree/main/Calibration%20Grid) and use your own camera to take multiple pictures of the grid from various angles (similar to the sample [calibration images](https://github.com/Tinker-Twins/Camera-Calibration/tree/main/Calibration%20Images) in this repository). For better results, the distance between the camera and calibration grid should be approximately equal to the working distance that you intend to maintain in your application. Additionally, the resolution and focus of the camera should be maintained constant while taking pictures.
 
 ### References:
