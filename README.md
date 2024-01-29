@@ -13,7 +13,7 @@ Camera calibration computes the following parameters:
     * Rotation vector
     * Translation vector
 
-Following is a brief description of the process [1].
+Following is a brief description of the process[^1].
 
 #### Distortion Coefficients
 <p align="justify">
@@ -23,10 +23,10 @@ Radial distortion causes straight lines to appear curved. Radial distortion beco
 </p>
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=x_%7Bdistorted%7D%20%3D%20x(%201%20%2B%20k_1%20r%5E2%20%2B%20k_2%20r%5E4%20%2B%20k_3%20r%5E6)">
+$x_{distorted} = x( 1 + k_1 r^2 + k_2 r^4 + k_3 r^6)$
 </p>
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=y_%7Bdistorted%7D%20%3D%20y(%201%20%2B%20k_1%20r%5E2%20%2B%20k_2%20r%5E4%20%2B%20k_3%20r%5E6)">
+$y_{distorted} = y( 1 + k_1 r^2 + k_2 r^4 + k_3 r^6)$
 </p>
 
 <p align="justify">
@@ -34,10 +34,10 @@ Similarly, tangential distortion occurs because the image-taking lense is not al
 </p>
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=x_%7Bdistorted%7D%20%3D%20x%20%2B%20%5B%202p_1xy%20%2B%20p_2(r%5E2%2B2x%5E2)%5D">
+$x_{distorted} = x + [ 2p_1xy + p_2(r^2+2x^2)]$
 </p>
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=y_%7Bdistorted%7D%20%3D%20y%20%2B%20%5B%20p_1(r%5E2%2B%202y%5E2)%2B%202p_2xy%5D">
+$y_{distorted} = y + [ p_1(r^2+ 2y^2)+ 2p_2xy]$
 </p>
 
 <p align="justify">
@@ -45,23 +45,23 @@ In short, we need to find five parameters, known as distortion coefficients give
 </p>
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=dist%20%3D%20(k_1%20%5Chspace%7B10pt%7D%20k_2%20%5Chspace%7B10pt%7D%20p_1%20%5Chspace%7B10pt%7D%20p_2%20%5Chspace%7B10pt%7D%20k_3)">
+$dist = (k_1 \hspace{10pt} k_2 \hspace{10pt} p_1 \hspace{10pt} p_2 \hspace{10pt} k_3)$
 </p>
 
 #### Camera Intrinsic Parameters
 
 <p align="justify">
-Intrinsic parameters are specific to a camera. They include information like focal length <img src="https://render.githubusercontent.com/render/math?math=(f_x%2Cf_y)"> and optical center <img src="https://render.githubusercontent.com/render/math?math=(c_x%2Cc_y)">. The focal length and optical center can be used to create a camera matrix, which can be used to remove distortion due to the lens of a specific camera. The camera matrix is unique to a specific camera, so once calculated, it can be reused on other images captured by the same camera. It is expressed as a <img src="https://render.githubusercontent.com/render/math?math=3%20%5Ctimes%203"> matrix:
+   Intrinsic parameters are specific to a camera. They include information like focal length $(f_x,f_y)$ and optical center $(c_x,c_y)$. The focal length and optical center can be used to create a camera matrix, which can be used to remove distortion due to the lens of a specific camera. The camera matrix is unique to a specific camera, so once calculated, it can be reused on other images captured by the same camera. It is expressed as a $3 \times 3$ matrix:
 </p>
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=mtx%20%3D%20%5Cleft%20%5B%20%5Cbegin%7Bmatrix%7D%20f_x%20%26%200%20%26%20c_x%20%5C%5C%200%20%26%20f_y%20%26%20c_y%20%5C%5C%200%20%26%200%20%26%201%20%5Cend%7Bmatrix%7D%20%5Cright%20%5D">
+   $$mtx=\left[\begin{matrix} f_x & 0 & c_x \\ 0 & f_y & c_y \\ 0 & 0 & 1 \end{matrix}\right]$$
 </p>
 
 #### Camera Extrinsic Parameters
 
 <p align="justify">
-Extrinsic parameters correspond to rotation and translation vectors, <img src="https://render.githubusercontent.com/render/math?math=r_%7Bvecs%7D"> and <img src="https://render.githubusercontent.com/render/math?math=t_%7Bvecs%7D"> respectively, which transform 3D coordinates of a point in world frame to camera coordinate system.
+Extrinsic parameters correspond to rotation and translation vectors, $r_{vecs}$ and $t_{vecs}$ respectively, which transform 3D coordinates of a point in world frame to camera coordinate system.
 </p>
 
 ### Implementation:
@@ -83,5 +83,4 @@ Once we get the `objpoints` and `imgpoints`, we can use them to calibrate the ca
 **Note:** To calibrate your own camera, you will need to print a suitable [calibration grid](https://github.com/Tinker-Twins/Camera-Calibration/tree/main/Calibration%20Grid) and use your own camera to take multiple pictures of the grid from various angles (similar to the sample [calibration images](https://github.com/Tinker-Twins/Camera-Calibration/tree/main/Calibration%20Images) in this repository). For better results, the distance between the camera and calibration grid should be approximately equal to the working distance that you intend to maintain in your application. Additionally, the resolution and focus of the camera should be maintained constant while taking pictures.
 
 ### References:
-
-[1] OpenCV, \"Camera Calibration,\" [Online]. Available: https://docs.opencv.org/master/dc/dbb/tutorial_py_calibration.html
+[^1]: OpenCV, \"Camera Calibration,\" [Online]. Available: https://docs.opencv.org/master/dc/dbb/tutorial_py_calibration.html
